@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Cisco",
+        "slug": "cisco"
+    },
+    {
+        "id": 2,
+        "name": "Juniper",
+        "slug": "juniper"
+    },
+    {
+        "id": 3,
+        "name": "Arista",
+        "slug": "arista"
+    },
+    {
+        "id": 4,
+        "name": "Dell",
+        "slug": "dell"
+    },
+    {
+        "id": 5,
+        "name": "HP",
+        "slug": "hp"
+    }
+]

@@ -48,7 +48,8 @@ resource "digitalocean_droplet" "prometheus" {
 
   provisioner "remote-exec" {
     inline = [
-      "/opt/prometheus/prometheus --web.listen-address ':9090' --web.enable-lifecycle --config.file '/opt/prometheus/config.yaml' &"
+      "nohup /opt/prometheus/prometheus --web.listen-address ':9090' --web.enable-lifecycle --config.file '/opt/prometheus/config.yaml' &",
+      "sleep 1"  # terraform shutsdown the connection before the child pid has exec'ed, so we add a bogus sleep at the end
     ]
 
     connection {

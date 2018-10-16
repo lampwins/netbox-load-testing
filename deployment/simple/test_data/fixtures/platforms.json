@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "IOS 9.3.5",
+        "slug": "ios-9-3-5",
+        "manufacturer": 1
+    },
+    {
+        "id": 2,
+        "name": "IOS 10.3.3",
+        "slug": "ios-10-3-3",
+        "manufacturer": 1
+    },
+    {
+        "id": 3,
+        "name": "NS-OS 7.0.3.4",
+        "slug": "nx-os-7-0-3-4",
+        "manufacturer": 1
+    },
+    {
+        "id": 4,
+        "name": "12.3D44",
+        "slug": "12-3d44",
+        "manufacturer": 2
+    },
+    {
+        "id": 5,
+        "name": "15.1D57",
+        "slug": "15-1d57",
+        "manufacturer": 2
+    },
+    {
+        "id": 6,
+        "name": "16.1D40",
+        "slug": "16-1d40",
+        "manufacturer": 2
+    },
+    {
+        "id": 7,
+        "name": "4.17.3",
+        "slug": "4-17-3",
+        "manufacturer": 3
+    },
+    {
+        "id": 8,
+        "name": "5.17.3",
+        "slug": "5-17-3",
+        "manufacturer": 3
+    },
+    {
+        "id": 9,
+        "name": "6.17.3",
+        "slug": "6-17-3",
+        "manufacturer": 3
+    }
+]
