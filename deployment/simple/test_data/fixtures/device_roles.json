@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Router",
+        "slug": "router",
+        "color": "112233"
+    },
+    {
+        "id": 2,
+        "name": "Spine Switch",
+        "slug": "spine-switch",
+        "color": "445566"
+    },
+    {
+        "id": 3,
+        "name": "Core Switch",
+        "slug": "core-switch",
+        "color": "778899"
+    },
+    {
+        "id": 4,
+        "name": "Leaf Switch",
+        "slug": "leaf-switch",
+        "color": "001122"
+    },
+    {
+        "id": 5,
+        "name": "OOB Switch",
+        "slug": "oob-switch",
+        "color": "334455"
+    },
+    {
+        "id": 6,
+        "name": "Toaster",
+        "slug": "toaster",
+        "color": "667788"
+    },
+    {
+        "id": 7,
+        "name": "Distribution Switch",
+        "slug": "distribution-switch",
+        "color": "990011"
+    },
+    {
+        "id": 8,
+        "name": "Access Switch",
+        "slug": "access-switch",
+        "color": "223344"
+    },
+    {
+        "id": 9,
+        "name": "Server",
+        "slug": "server",
+        "color": "556677"
+    }
+]

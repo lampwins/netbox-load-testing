@@ -22,7 +22,8 @@ resource "digitalocean_droplet" "netbox" {
       "git clone -b ${var.git_branch} https://github.com/lampwins/netbox.git /opt/netbox",
       "pip3 install -r /opt/netbox/requirements.txt",
       "pip3 install django-rq",
-      "pip3 install gunicorn"
+      "pip3 install gunicorn",
+      "pip3 install django-prometheus"
     ]
 
     connection {
@@ -41,7 +42,8 @@ resource "digitalocean_droplet" "netbox" {
       "tar -zxf node_exporter.tar.gz",
       "mv node_exporter-*/node_exporter .",
       "chmod +x node_exporter",
-      "/opt/prometheus/node_exporter &"
+      "nohup /opt/prometheus/node_exporter &",
+      "sleep 1"  # terraform shutsdown the connection before the child pid has exec'ed, so we add a bogus sleep at the end
     ]
 
     connection {
@@ -117,8 +119,8 @@ resource "digitalocean_droplet" "netbox" {
       "su - postgres -c 'psql -f /opt/netbox/netbox_install.sql'",
       "python3 /opt/netbox/netbox/manage.py migrate",
       "echo \"from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@example.com', 'admin')\" | python3 /opt/netbox/netbox/manage.py shell",
+      "echo \"from users.models import Token; from django.contrib.auth.models import User; nb_user = User.objects.get(username='admin'); token = Token.objects.create(user=nb_user, key='${var.netbox_api_token}'); token.save()\" | python3 /opt/netbox/netbox/manage.py shell",
       "python3 /opt/netbox/netbox/manage.py collectstatic --no-input",
-      "python3 /opt/netbox/netbox/manage.py loaddata initial_data",
       "rm /etc/nginx/sites-enabled/default",
       "ln -s /etc/nginx/sites-available/netbox /etc/nginx/sites-enabled/netbox",
       "service supervisor restart",
@@ -131,8 +133,12 @@ resource "digitalocean_droplet" "netbox" {
         private_key = "${file(var.ssh_private_key)}"
     }
   }
+
+  provisioner "local-exec" {
+    command = "python test_data/populate.py ${digitalocean_droplet.netbox.ipv4_address} ${var.netbox_api_token}"
+  }
 }
 
-output "ipv4_address_web" {
+output "ipv4_address_netbox" {
   value = "${digitalocean_droplet.netbox.ipv4_address}"
 }

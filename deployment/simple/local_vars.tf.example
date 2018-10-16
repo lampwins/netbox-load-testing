@@ -7,3 +7,5 @@ variable "ssh_private_key" {}
 variable "git_branch" {
     default = "develop"
 }
+
+variable "netbox_api_token" {}

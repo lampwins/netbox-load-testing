@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "name": "NYC",
+        "slug": "nyc",
+        "region": 1
+    },
+    {
+        "id": 2,
+        "name": "Charleston",
+        "slug": "charleston",
+        "region": 1
+    },
+    {
+        "id": 3,
+        "name": "Dallas",
+        "slug": "dallas",
+        "region": 1
+    },
+    {
+        "id": 4,
+        "name": "New Orleans",
+        "slug": "new-orleans",
+        "region": 1
+    },
+    {
+        "id": 5,
+        "name": "Rock Hill",
+        "slug": "rock-hill",
+        "region": 1
+    },
+    {
+        "id": 6,
+        "name": "Topeka",
+        "slug": "topeka",
+        "region": 1
+    },
+    {
+        "id": 7,
+        "name": "Nashville",
+        "slug": "nashville",
+        "region": 1
+    },
+    {
+        "id": 8,
+        "name": "Roanoke",
+        "slug": "roanoke",
+        "region": 1
+    },
+    {
+        "id": 9,
+        "name": "Las Vegas",
+        "slug": "las-vegas",
+        "region": 1
+    },
+    {
+        "id": 10,
+        "name": "San Francisco",
+        "slug": "san-francisco",
+        "region": 1
+    },
+    {
+        "id": 11,
+        "name": "London",
+        "slug": "london",
+        "region": 2
+    },
+    {
+        "id": 12,
+        "name": "Paris",
+        "slug": "paris",
+        "region": 2
+    },
+    {
+        "id": 13,
+        "name": "Dublin",
+        "slug": "dublin",
+        "region": 2
+    },
+    {
+        "id": 14,
+        "name": "Zurik",
+        "slug": "zurik",
+        "region": 2
+    },
+    {
+        "id": 15,
+        "name": "Athens",
+        "slug": "athens",
+        "region": 2
+    },
+    {
+        "id": 16,
+        "name": "Crete",
+        "slug": "crete",
+        "region": 2
+    },
+    {
+        "id": 17,
+        "name": "Sparta",
+        "slug": "sparta",
+        "region": 2
+    },
+    {
+        "id": 18,
+        "name": "Zimbabwe",
+        "slug": "zimbabwe",
+        "region": 2
+    },
+    {
+        "id": 19,
+        "name": "Frankfurt",
+        "slug": "frankfurt",
+        "region": 2
+    },
+    {
+        "id": 20,
+        "name": "Prague",
+        "slug": "prague",
+        "region": 2
+    },
+    {
+        "id": 21,
+        "name": "Hong Kong",
+        "slug": "hong-kong",
+        "region": 3
+    },
+    {
+        "id": 22,
+        "name": "Tokyo",
+        "slug": "tokyo",
+        "region": 3
+    },
+    {
+        "id": 23,
+        "name": "Bangkok",
+        "slug": "bangkok",
+        "region": 3
+    },
+    {
+        "id": 24,
+        "name": "Shanghai",
+        "slug": "shanghai",
+        "region": 3
+    },
+    {
+        "id": 25,
+        "name": "Seoul",
+        "slug": "seoul",
+        "region": 3
+    },
+    {
+        "id": 26,
+        "name": "Beijing",
+        "slug": "beijing",
+        "region": 3
+    },
+    {
+        "id": 27,
+        "name": "Kuala Lumpur",
+        "slug": "kuala-lumpur",
+        "region": 3
+    },
+    {
+        "id": 28,
+        "name": "Manila",
+        "slug": "manila",
+        "region": 3
+    },
+    {
+        "id": 29,
+        "name": "Taipei",
+        "slug": "taipei",
+        "region": 3
+    },
+    {
+        "id": 30,
+        "name": "Jakarta",
+        "slug": "jakarta",
+        "region": 3
+    }
+]
