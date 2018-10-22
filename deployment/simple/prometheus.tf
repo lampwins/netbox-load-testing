@@ -20,6 +20,7 @@ resource "digitalocean_droplet" "prometheus" {
   # run settup part 1
   provisioner "remote-exec" {
     inline = [
+      "apt update",
       "mkdir -p /opt/prometheus",
       "cd /opt/prometheus",
       "curl -o prometheus.tar.gz -L https://github.com/prometheus/prometheus/releases/download/v2.4.3/prometheus-2.4.3.linux-amd64.tar.gz",
@@ -38,6 +39,25 @@ resource "digitalocean_droplet" "prometheus" {
   provisioner "file" {
     content     = "${data.template_file.prometheus_config.rendered}"
     destination = "/opt/prometheus/config.yaml"
+
+    connection {
+        type     = "ssh"
+        user     = "root"
+        private_key = "${file(var.ssh_private_key)}"
+    }
+  }
+
+  # grafana
+  provisioner "remote-exec" {
+    inline = [
+      "cd ~",
+      "apt install -y adduser libfontconfig",
+      "wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.3.1_amd64.deb",
+      "dpkg -i grafana_*.deb",
+      "/bin/systemctl daemon-reload",
+      "/bin/systemctl enable grafana-server",
+      "/bin/systemctl start grafana-server"
+    ]
 
     connection {
         type     = "ssh"

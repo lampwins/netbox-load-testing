@@ -26,7 +26,7 @@ def make_request(path, address, token, data=None):
     try:
         response = urllib2.urlopen(request)
     except Exception as e:
-        print e.read()
+        print(e.read())
     return json.loads(response.read())
 
 
@@ -42,31 +42,33 @@ def post_objects(path, address, token, data):
 
 def load_data(address, token):
 
-    with open("fixtures/regions.json", "r") as f:
+    locate = lambda x: os.path.abspath(os.path.join(os.path.dirname(__file__), x))
+
+    with open(locate("fixtures/regions.json"), "r") as f:
         regions = json.load(f)
 
     if get_object_count(regions_path, address, token) != len(regions):
         post_objects(regions_path, address, token, regions)
 
-    with open("fixtures/sites.json", "r") as f:
+    with open(locate("fixtures/sites.json"), "r") as f:
         sites = json.load(f)
 
     if get_object_count(sites_path, address, token) != len(sites):
         post_objects(sites_path, address, token, sites)
 
-    with open("fixtures/manufacturers.json", "r") as f:
+    with open(locate("fixtures/manufacturers.json"), "r") as f:
         manufacturers = json.load(f)
 
     if get_object_count(manufacturers_path, address, token) != len(manufacturers):
         post_objects(manufacturers_path, address, token, manufacturers)
 
-    with open("fixtures/platforms.json", "r") as f:
+    with open(locate("fixtures/platforms.json"), "r") as f:
         platforms = json.load(f)
 
     if get_object_count(platforms_path, address, token) != len(platforms):
         post_objects(platforms_path, address, token, platforms)
 
-    with open("fixtures/device_roles.json", "r") as f:
+    with open(locate("fixtures/device_roles.json"), "r") as f:
         device_roles = json.load(f)
 
     if get_object_count(device_roles_path, address, token) != len(device_roles):
