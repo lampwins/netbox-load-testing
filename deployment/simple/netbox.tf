@@ -135,7 +135,7 @@ resource "digitalocean_droplet" "netbox" {
   }
 
   provisioner "local-exec" {
-    command = "python test_data/populate.py ${digitalocean_droplet.netbox.ipv4_address} ${var.netbox_api_token}"
+    command = "sleep 30 && python test_data/populate.py ${digitalocean_droplet.netbox.ipv4_address} ${var.netbox_api_token}"
   }
 }
 
